@@ -1,0 +1,19 @@
+<h1><%= @task.title %></h1>
+
+<%= link_to "Edit task", edit_task_path %>
+
+<p><%= @task.details %></p>
+
+<ul class="list-unstyled">
+    <li class="list-group-item">
+      <% if @task.completed %>
+        <i class="fa-regular fa-square-check"></i>
+        <label class="form-check-label" for="task-<%= @task.id %>">This task is completed.</label>
+      <% else %>
+        <i class="fa-regular fa-square"></i>
+        <label class="form-check-label" for="task-<%= @task.id %>">This task is not completed yet.</label>
+      <% end %>
+    </li>
+</ul>
+
+<%= link_to "Back to list", tasks_path %>
